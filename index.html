@@ -7,11 +7,16 @@
 </head>
 <body>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         :root {
             --deepblue: #33419e;
             --pastelyel: #f0d78d;
             --pastelyel2: #f0e88d;
             --pastelblue: #8db8f0;
+            --grey: #5c616e;
         }
 
         .patio {
@@ -24,11 +29,15 @@
         }
 
         .patio-item-yel {
-            background-image: linear-gradient(45deg, var(--pastelyel), var(--pastelyel2));
+            background-image: linear-gradient(45deg, var(--pastelyel), var(--pastelyel));
+        }
+
+        .patio-item-yel2 {
+            background-image: linear-gradient(45deg, var(--pastelyel2), var(--pastelyel2));
         }
 
         .patio-item-blue {
-            background-image: linear-gradient(45deg, var(--pastelblue), var(--pastelyel2));
+            background-image: linear-gradient(45deg, var(--pastelblue), var(--pastelblue));
         }
 
         .patio-item-click {
@@ -37,47 +46,67 @@
         }
 
         .patio-item-click:hover {
-            background-image: linear-gradient(0deg, var(--deepblue));
-            transform: scale(102%) rotate(2deg);
+            border: 2px solid var(--deepblue);
+            transform: scale(98%);
         }
 
         .header {
+            position: relative;
             width: 100%;
-            height: 60px;
+            height: 66px;
             background-color: var(--deepblue);
         }
 
         .header-logo {
+            position: absolute;
             width: 45px;
             height: 60px;
+            left: calc(50% - 22.5px);
+            top: 3px;
             cursor: pointer;
             transition: transform 0.2s;
         }
 
-        .header-logo:hover {
+        .header-buttonmenu {
+            position: absolute;
+            width: 45px;
+            height: 60px;
+            left: 3px;
+            top: 3px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .header>*:hover {
             transform: scale(90%);
         }
 
         .main-grid {
             margin: 15px auto 0;
-            width: 180px;
-            height: 105px;
-            border: 1px solid var(--deepblue);
-            border-radius: 3px;
+            width: calc(100% - 40px);
+            max-width: 400px;
+            aspect-ratio: 1;
+            background-color: var(--grey);
+            border-radius: 5px;
         }
     </style>
     <header class="header">
+        <div class="header-buttonmenu patio">
+            <div style="top:2px;left:2px;width:11px;height:11px;" class="patio-item patio-item-yel"></div>
+            <div style="top:2px;left:17px;width:26px;height:41px;" class="patio-item patio-item-blue"></div>
+            <div style="top:32px;left:2px;width:11px;height:26px;" class="patio-item patio-item-yel2"></div>
+        </div>
         <div class="header-logo patio">
             <div style="top:2px;left:2px;width:11px;height:11px;" class="patio-item patio-item-yel"></div>
             <div style="top:2px;left:17px;width:26px;height:41px;" class="patio-item patio-item-blue"></div>
-            <div style="top:32px;left:2px;width:11px;height:26px;" class="patio-item patio-item-blue"></div>
+            <div style="top:32px;left:2px;width:11px;height:26px;" class="patio-item patio-item-yel2"></div>
         </div>
     </header>
     <main>
         <div class="main-grid patio">
-            <div style="top:2px;left:2px;width:11px;height:11px;" class="patio-item patio-item-yel patio-item-click"></div>
-            <div style="top:2px;left:17px;width:26px;height:41px;" class="patio-item patio-item-blue patio-item-click"></div>
-            <div style="top:32px;left:2px;width:11px;height:26px;" class="patio-item patio-item-blue patio-item-click"></div>
+            <div style="top:1%;left:1%;width:8%;height:8%;" class="patio-item patio-item-yel patio-item-click"></div>
+            <div style="top:1%;left:11%;width:18%;height:28%;" class="patio-item patio-item-blue patio-item-click"></div>
+            <div style="top:21%;left:1%;width:8%;height:18%;" class="patio-item patio-item-yel2 patio-item-click"></div>
         </div>
     </main>
 </body>
