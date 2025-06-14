@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patio</title>
+</head>
+<body>
+    <style>
+        :root {
+            --deepblue: #33419e;
+            --pastelyel: #f0d78d;
+            --pastelyel2: #f0e88d;
+            --pastelblue: #8db8f0;
+        }
+
+        .patio {
+            position: relative;
+        }
+
+        .patio-item {
+            position: absolute;
+            border-radius: 3px;
+        }
+
+        .patio-item-yel {
+            background-image: linear-gradient(45deg, var(--pastelyel), var(--pastelyel2));
+        }
+
+        .patio-item-blue {
+            background-image: linear-gradient(45deg, var(--pastelblue), var(--pastelyel2));
+        }
+
+        .patio-item-click {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .patio-item-click:hover {
+            background-image: linear-gradient(0deg, var(--deepblue));
+            transform: scale(102%) rotate(2deg);
+        }
+
+        .header {
+            width: 100%;
+            height: 60px;
+            background-color: var(--deepblue);
+        }
+
+        .header-logo {
+            width: 45px;
+            height: 60px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .header-logo:hover {
+            transform: scale(90%);
+        }
+
+        .main-grid {
+            margin: 15px auto 0;
+            width: 180px;
+            height: 105px;
+            border: 1px solid var(--deepblue);
+            border-radius: 3px;
+        }
+    </style>
+    <header class="header">
+        <div class="header-logo patio">
+            <div style="top:2px;left:2px;width:11px;height:11px;" class="patio-item patio-item-yel"></div>
+            <div style="top:2px;left:17px;width:26px;height:41px;" class="patio-item patio-item-blue"></div>
+            <div style="top:32px;left:2px;width:11px;height:26px;" class="patio-item patio-item-blue"></div>
+        </div>
+    </header>
+    <main>
+        <div class="main-grid patio">
+            <div style="top:2px;left:2px;width:11px;height:11px;" class="patio-item patio-item-yel patio-item-click"></div>
+            <div style="top:2px;left:17px;width:26px;height:41px;" class="patio-item patio-item-blue patio-item-click"></div>
+            <div style="top:32px;left:2px;width:11px;height:26px;" class="patio-item patio-item-blue patio-item-click"></div>
+        </div>
+    </main>
+</body>
+</html>
